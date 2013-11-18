@@ -1,4 +1,4 @@
-package edu.umn.cs.recsys.ii;
+package recsys.ii;
 
 import org.grouplens.lenskit.basic.AbstractItemScorer;
 import org.grouplens.lenskit.data.dao.UserEventDAO;

@@ -1,8 +1,8 @@
-package edu.umn.cs.recsys.ii;
+package recsys.ii;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import edu.umn.cs.recsys.dao.*;
+import recsys.dao.*;
 import org.grouplens.lenskit.GlobalItemRecommender;
 import org.grouplens.lenskit.GlobalItemScorer;
 import org.grouplens.lenskit.ItemScorer;

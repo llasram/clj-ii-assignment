@@ -1,4 +1,4 @@
-package edu.umn.cs.recsys;
+package recsys;
 
 import org.grouplens.lenskit.data.dao.EventDAO;
 import org.grouplens.lenskit.data.dao.PrefetchingUserEventDAO;

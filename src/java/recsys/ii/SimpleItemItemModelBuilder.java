@@ -1,4 +1,4 @@
-package edu.umn.cs.recsys.ii;
+package recsys.ii;
 
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.longs.LongSet;

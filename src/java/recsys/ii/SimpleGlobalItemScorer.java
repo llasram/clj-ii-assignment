@@ -1,4 +1,4 @@
-package edu.umn.cs.recsys.ii;
+package recsys.ii;
 
 import org.grouplens.lenskit.basic.AbstractGlobalItemScorer;
 import org.grouplens.lenskit.scored.ScoredId;

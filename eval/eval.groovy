@@ -1,8 +1,8 @@
-import edu.umn.cs.recsys.QueryDAOProvider
-import edu.umn.cs.recsys.dao.CSVItemTagDAO
-import edu.umn.cs.recsys.dao.TagFile
-import edu.umn.cs.recsys.dao.TitleFile
-import edu.umn.cs.recsys.ii.SimpleItemItemScorer
+import recsys.QueryDAOProvider
+import recsys.dao.CSVItemTagDAO
+import recsys.dao.TagFile
+import recsys.dao.TitleFile
+import recsys.ii.SimpleItemItemScorer
 import org.grouplens.lenskit.ItemScorer
 import org.grouplens.lenskit.baseline.ItemMeanRatingItemScorer
 import org.grouplens.lenskit.baseline.UserMeanBaseline
