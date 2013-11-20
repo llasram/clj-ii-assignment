@@ -28,6 +28,7 @@
   [event] (RatingVectorUserHistorySummarizer/makeRatingVector event))
 
 (defn item-vectors
+  "Generate a map of item to vector of user ratings of that item."
   [^ItemDAO idao ^UserEventDAO uedao]
   (let [items (.getItemIds idao)]
     (with-open [stream (.streamEventsByUser uedao)]
@@ -44,6 +45,8 @@
            (into {})))))
 
 (defprovider simple-item-item-model
+  "Generate map of item IDs to `ScoreId`s for each other item, holding the other
+item ID and similarity."
   ^SimpleItemItemModel [^ItemDAO idao ^UserEventDAO uedao]
   (let [vectors (item-vectors idao uedao)
         items (keys vectors)]
