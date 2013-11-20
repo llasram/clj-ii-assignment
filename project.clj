@@ -13,6 +13,7 @@
                  [org.slf4j/slf4j-api "1.7.5"]
                  [org.slf4j/slf4j-log4j12 "1.7.5"]
                  [log4j "1.2.17"]]
+  :main ^:skip-aot recsys.ii
   :aliases {"lenskit-eval" ;; Should become a plugin, but this works for now
             ["run" "-m" "parenskit.eval" "./eval/eval.groovy"
              "project.build.sourceEncoding=UTF-8"

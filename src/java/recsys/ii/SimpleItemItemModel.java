@@ -13,7 +13,6 @@ import java.util.Map;
  * @author <a href="http://www.grouplens.org">GroupLens Research</a>
  */
 @Shareable
-@DefaultProvider(SimpleItemItemModelBuilder.class)
 public class SimpleItemItemModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
