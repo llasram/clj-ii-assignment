@@ -3,6 +3,7 @@ import recsys.dao.CSVItemTagDAO
 import recsys.dao.TagFile
 import recsys.dao.TitleFile
 import recsys.ii.SimpleItemItemScorer
+import recsys.ii.SimpleItemItemModel
 import org.grouplens.lenskit.ItemScorer
 import org.grouplens.lenskit.baseline.ItemMeanRatingItemScorer
 import org.grouplens.lenskit.baseline.UserMeanBaseline
@@ -23,6 +24,10 @@ import org.grouplens.lenskit.transform.normalize.MeanCenteringVectorNormalizer
 import org.grouplens.lenskit.transform.normalize.VectorNormalizer
 import org.grouplens.lenskit.vectors.similarity.CosineVectorSimilarity
 import org.grouplens.lenskit.vectors.similarity.VectorSimilarity
+
+import clojure.lang.RT
+import clojure.lang.Var
+import clojure.lang.Symbol
 
 // common configuration to make tags available
 // needed for both some algorithms and for metrics
@@ -83,6 +88,9 @@ partialTrainData = (0..(partialData.size() - 1)).collect { int i ->
            .build()
 }
 
+RT.var("clojure.core", "require").invoke(Symbol.intern("recsys.ii"))
+itemItemModelProvider = RT.var("recsys.ii", "simple-item-item-model").deref()
+
 // Run a train-test evaluation
 trainTest {
     dataset fullData
@@ -139,6 +147,7 @@ trainTest {
 
             // use the item-item rating predictor
             bind ItemScorer to SimpleItemItemScorer
+            bind SimpleItemItemModel toProvider itemItemModelProvider
 
             set NeighborhoodSize to nnbrs
 
